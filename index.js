@@ -18387,7 +18387,8 @@ module.exports = {
             A._setPixels(p, v);
           }
           (A._toPixels = function(e) {
-            return e instanceof ImageData
+            // return e instanceof ImageData
+            return e.data
               ? e.data
               : e.getContext("2d").getImageData(0, 0, e.width, e.height).data;
           }),
